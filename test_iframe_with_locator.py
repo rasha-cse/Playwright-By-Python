@@ -3,17 +3,16 @@ from playwright.sync_api import Page, expect, sync_playwright
 
 
 def test_iframe_with_locator(page: Page, const=None):
-    page.goto("https://qa02.therapbd.net/")
+    page.goto("https://sample.test.net/")
 
     page.locator('#loginName').type('rasha-cos')
-    page.locator('#password').type('therap321#')
-    page.locator('#providerCode').type('DDD-ND')
+    page.locator('#password').type('sample.test#')
     page.get_by_role("button").click()
 
     #page.locator('"Agree"').click()
 
     ################################### iframe(with locator) ###############################
-    page.goto("https://qa02.therapbd.net/ma/nd/osp/osp?_flowId=nd-osp-flow&formId=OSP-DDDND-LDB2JVSBDWXUW")
+    page.goto("https://qa02.therapbd.net/ma/nd/osp/osp?_flowId=flow&formId=LDB2JVSBDWXUW")
     frame_three = page.wait_for_selector("#mce_0_ifr").content_frame()
     frame_three.locator('#tinymce').type('DDD-ND')
 
