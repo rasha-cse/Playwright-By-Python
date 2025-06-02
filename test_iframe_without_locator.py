@@ -6,8 +6,7 @@ def test_iframe_without_locator(page: Page, const=None):
     page.goto("https://sample.test.net/")
 
     page.locator('#loginName').type('rasha-cos')
-    page.locator('#password').type('therap321#')
-    page.locator('#providerCode').type('DDD-ND')
+    page.locator('#password').type('sample.test#')
     page.get_by_role("button").click()
 
     ################################### iframe(without locator) ###############################
